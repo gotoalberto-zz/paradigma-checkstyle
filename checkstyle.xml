@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE module PUBLIC
+    "-//Puppy Crawl//DTD Check Configuration 1.2//EN"
+    "http://www.puppycrawl.com/dtds/configuration_1_2.dtd">
+
+<module name="Checker">
+
+    <!-- License header -->
+    <module name="Header">
+        <property name="headerFile" 
+        value="src/main/resources/checkstyle/paradigma.header" />
+    </module>  
+
+    <!-- Checks whether files end with a new line. -->
+    <module name="NewlineAtEndOfFile"/>
+
+    <!-- Checks for trailing spaces-->
+    <module name="FileTabCharacter"/>
+
+    <module name="TreeWalker">
+        <!-- Checks for Javadoc comments. -->
+        <module name="JavadocMethod">
+             <property name="scope" value="public"/>
+             <property name="excludeScope" value="private"/>
+             <property name="allowUndeclaredRTE" value="true"/>
+             <property name="allowMissingJavadoc" value="true"/>
+        </module>
+        <module name="JavadocType">
+            <property name="authorFormat" 
+                value="^[a-z0-9_-]{3,15}$"/>
+            <property name="excludeScope" value="private"/>
+        </module>
+        <module name="JavadocStyle">
+            <property name="scope" value="public"/>
+        </module>
+
+        <!-- Checks for Naming Conventions (CamelCase, etc.)-->
+        <module name="ConstantName"/>
+        <module name="LocalFinalVariableName"/>
+        <module name="LocalVariableName"/>
+        <module name="MemberName"/>
+        <module name="MethodName"/>
+        <module name="PackageName"/>
+        <module name="ParameterName"/>
+        <module name="StaticVariableName"/>
+        <module name="TypeName"/>
+
+        <!-- Checks for imports -->
+        <module name="AvoidStarImport"/>
+        <module name="IllegalImport"/>
+        <module name="RedundantImport"/>
+        <module name="UnusedImports"/>
+        <module name="ImportOrder">
+            <property name="groups" value="java,javax,com,org,es.pt"/>
+            <property name="separated" value="true"/>
+            <property name="option" value="above"/>
+        </module>
+
+        <!-- Checks for Size Violations. -->
+        <module name="LineLength"/>
+
+        <!-- Checks for whitespace -->
+        <module name="EmptyForIteratorPad"/>
+        <module name="EmptyForInitializerPad"/>
+        <module name="GenericWhitespace"/>
+        <module name="MethodParamPad">
+            <property name="tokens" value="METHOD_DEF"/>
+            <property name="allowLineBreaks" value="true"/>
+        </module>
+        <module name="NoWhitespaceAfter"/>
+        <module name="NoWhitespaceBefore"/>
+        <module name="OperatorWrap"/>
+        <module name="TypecastParenPad"/>
+        <module name="WhitespaceAfter"/>
+        <module name="WhitespaceAround"/>
+
+        <!-- Modifier Checks -->
+        <module name="ModifierOrder"/>
+        <module name="RedundantModifier"/>
+
+        <!-- Checks for blocks -->
+        <module name="AvoidNestedBlocks"/>
+        <module name="EmptyBlock"/>
+        <module name="LeftCurly"/>
+        <module name="NeedBraces"/>
+        <module name="RightCurly"/>
+
+        <!-- Checks for common coding problems -->
+        <module name="AvoidInlineConditionals"/>
+        <module name="DoubleCheckedLocking"/>
+        <module name="EmptyStatement"/>
+        <module name="EqualsHashCode"/>
+        <module name="HiddenField"/>
+        <module name="IllegalInstantiation"/>
+        <module name="InnerAssignment"/>
+        <module name="MagicNumber"/>
+        <module name="MissingSwitchDefault"/>
+        <module name="RedundantThrows"/>
+        <module name="SimplifyBooleanExpression"/>
+        <module name="SimplifyBooleanReturn"/>
+        <module name="CovariantEquals"/>
+        <module name="EqualsAvoidNull"/>
+        <module name="EqualsHashCode"/>
+        <module name="FinalLocalVariable"/>
+        <module name="StringLiteralEquality"/>
+        <module name="SuperClone"/>
+        <module name="RequireThis"/>
+        <module name="UnnecessaryParentheses"/>
+
+        <!-- Checks for class design -->
+        <module name="DesignForExtension"/>
+        <module name="FinalClass"/>
+        <module name="InterfaceIsType"/>
+        <module name="VisibilityModifier"/>
+
+        <!-- Miscellaneous other checks. -->
+        <module name="FinalClass"/>
+        <module name="ArrayTypeStyle"/>
+        <module name="FinalParameters"/>
+        <module name="TodoComment"/>
+        <module name="UpperEll"/>
+    </module>
+</module>
